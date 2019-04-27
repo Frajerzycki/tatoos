@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% set images = ["tatoo_1.jpg", "tatoo_2.jpg","tatoo_3.jpg","tatoo_4.jpg"]%}
+{% block content %}
+<div class="row">
+    <div class="col s10 offset-s1">
+        <div class="carousel carousel-slider col s10 offset-s1 center">
+            {% for image in images%}
+            <a class="carousel-item"><img src="{{url_for('static', filename='images/' ~ image)}}"></img></a>
+            {%endfor%}
+        </div>
+    </div>
+</div>
+{%endblock%}

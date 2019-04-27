@@ -1,0 +1,16 @@
+body {
+    background-color: white;
+    color:black;
+}
+
+h1 {
+    color: black;
+}
+.nav-wrapper {
+    background-color: #5c6bc0;
+}
+@media only screen and (max-width: 600px) {
+    .parallax-container {
+        height: 150px;
+    }
+}

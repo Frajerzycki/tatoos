@@ -1,0 +1,45 @@
+{% set sites = [("/","Strona główna", "home", 0), ("portfolio","Portfolio", "collections", 1), ("money","Cennik", "account_balance_wallet", 2)]%}
+
+<head>
+    <meta name=viewport content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/materialize.min.css') }}">
+</head>
+<title>{{sites[this_identifier][1]}}</title>
+
+<body>
+    {% block navbar%}
+    <nav>
+        <div class="nav-wrapper z-depth-5">
+            <a href="#" class="brand-logo right"><i class="material-icons left">brush</i>Tatoos</a>
+            <a href="#" data-target="slide-out" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul id="nav-mobile" class="left hide-on-med-and-down">
+                {% for href, caption,icon, identifier in sites%}
+                {% if this_identifier != identifier%}
+
+                <li><a class="waves-effect waves-purple" href={{href}}><i
+                            class="material-icons left">{{icon}}</i>{{caption}}</a></li>
+                {%endif%}
+                {% endfor %}
+            </ul>
+        </div>
+    </nav>
+    {% endblock%}
+    {%block sidenav%}
+    <ul id="slide-out" class="sidenav">
+        {% for href, caption,icon, identifier in sites%}
+        {% if this_identifier != identifier%}
+        <li><a class="waves-effect waves-purple" href={{href}}><i
+                    class="material-icons left">{{icon}}</i>{{caption}}</a></li> {%endif%}
+        {% endfor %}
+    </ul>
+    {%endblock%}
+    {% block content %}
+    {% endblock %}
+
+    {% block scripts%}
+    <script src="{{ url_for('static', filename='js/materialize.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/initializers.js') }}"></script>
+    {% endblock%}
+</body>

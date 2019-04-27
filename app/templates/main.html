@@ -1,0 +1,38 @@
+{%extends 'base.html'%}
+
+{% block content%}
+
+<div style="width:100%;" class="parallax-container">
+    <div class="parallax"><img src="{{ url_for('static', filename='images/piggybank.jpg') }}" alt="Oszczędnośc"></div>
+</div>
+<div class="section white">
+    <div class="row container">
+        <h1 class="header">Tatuaże w niskiej cenie!</h1>
+        <p class="grey-text text-darken-3 lighten-3">Tylko tutaj posiądziesz tatuaż wysokiej jakości tak tanio!
+        </p>
+    </div>
+</div>
+<div class="parallax-container">
+    <div class="parallax"><img src="{{ url_for('static', filename='images/hygiene.jpg') }}" alt="Oszczędnośc"></div>
+</div>
+<div class="section white">
+    <div class="row container">
+        <h1 class="header">Higiena!</h1>
+        <p class="grey-text text-darken-3 lighten-3">Igły są jednorazowe, używane są gumowe rękawiczki, a skóra jest odkażana!
+        </p>
+    </div>
+</div>
+<div class="parallax-container">
+    <div class="parallax"><img src="{{ url_for('static', filename='images/needle_tatoo.jpg') }}" alt="Higiena"></div>
+</div>
+<div class="section white">
+    <div class="row container">
+        <h1 class="header">Małe ryzyko błędu!</h1>
+        <p class="grey-text text-darken-3 lighten-3">Tatuaże wykonywane są samą igłą bez maszynki dzięki czemu tatuażystka ma pełną kontrolę nad tym co robi!
+        </p>
+    </div>
+</div>
+<div class="parallax-container">
+    <div class="parallax"><img src="{{ url_for('static', filename='images/precision.jpg') }}" alt="Dokładność"></div>
+</div>
+{%endblock%}
