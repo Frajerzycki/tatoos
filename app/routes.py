@@ -7,8 +7,12 @@ def index():
 
 @app.route("/portfolio")
 def portfolio():
-    return render_template('portfolio.html', this_identifier=1)
+    return render_template('images.html', this_identifier=1, directory='portfolio', length=25)
+
+@app.route("/patterns")
+def patterns():
+    return render_template('images.html', this_identifier=2, directory='patterns', length=8)
 
 @app.route("/money")
 def about():
-    return render_template('money.html', this_identifier=2)
+    return render_template('money.html', this_identifier=3)
